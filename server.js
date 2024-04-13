@@ -1,15 +1,16 @@
 const express = require("express");
 const app = express();
 const db = require("./db");
+require("dotenv").config();
 
 const bodyParser = require("body-parser");
 app.use(bodyParser.json());
 
-//person routes
+// Person routes
 const personRoute = require("./routes/personRoute");
 app.use("/person", personRoute);
 
-//menuItem routes
+// MenuItem routes
 const menuRoute = require("./routes/menuRoute");
 app.use("/menu", menuRoute);
 
@@ -18,8 +19,8 @@ app.get("/", (req, res) => {
   console.log("Data is connected to server");
 });
 
-const PORT = 2004;
+const PORT = process.env.PORT || 2004;
 
 app.listen(PORT, () => {
-  console.log(`Server is running on http://localhost:${PORT}`);
+  console.log("Server is running on port " + PORT);
 });
