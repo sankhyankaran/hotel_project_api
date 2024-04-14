@@ -7,7 +7,7 @@ const passport = require("./auth");
 const PORT = process.env.PORT || 2004;
 
 const bodyParser = require("body-parser");
-app.use(bodyParser.json());
+app.use(bodyParser.json()); //store the data in req.body
 
 const logRequest = (req, res, next) => {
   console.log(
