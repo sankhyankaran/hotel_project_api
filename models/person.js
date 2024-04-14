@@ -31,6 +31,14 @@ const personSchema = new mongoose.Schema({
     type: Number, // Changed type from String to Number for salary
     required: true,
   },
+  username: {
+    required: true,
+    type: String,
+  },
+  password: {
+    required: true,
+    type: String,
+  },
 });
 
 const Person = mongoose.model("Person", personSchema);
