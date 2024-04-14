@@ -24,7 +24,7 @@ const localAuthMiddleware = passport.authenticate("local", { session: false });
 
 //Person routes
 const personRoute = require("./routes/personRoute");
-app.use("/person", localAuthMiddleware, personRoute);
+app.use("/person", personRoute);
 
 // MenuItem routes
 const menuRoute = require("./routes/menuRoute");
