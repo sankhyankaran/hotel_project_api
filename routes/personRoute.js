@@ -31,7 +31,7 @@ router.get("/:workType", async (req, res) => {
     const workType = req.params.workType;
     if (workType == "chef" || workType == "manager" || workType == "waiter") {
       const respone = await Person.find({ work: workType });
-      console.log("parameterised data is fetch");
+      console.log("person data is fetch");
       res.status(200).json(respone);
     } else {
       res.status(404).json({ error: "Invalid workType" });
